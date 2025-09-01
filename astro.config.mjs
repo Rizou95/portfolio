@@ -1,5 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import github from '@astrojs/github';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://rizou95.github.io',
+  base: '/portfolio/', // repo name if not root
+  adapter: github(),
+});
+
