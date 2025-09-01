@@ -3,17 +3,32 @@ import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Home">
   <section class="hero">
-    <img src="/portfolio/profile.jpg" alt="Profile Picture" class="profile-pic" />
-    <h1>Hi, I’m <span class="highlight">Rizwaan Popat</span></h1>
-    <p>
-      I’m a young IT Engineer specializing in <strong>Cybersecurity</strong>.  
-      Passionate about securing systems, solving challenges, and building innovative projects.
+    <!-- Profile + Info Row -->
+    <div class="hero-top">
+      <!-- Profile Picture -->
+      <div class="profile-wrapper">
+        <img src="/portfolio/profile.png" alt="Profile Picture" class="profile-pic" />
+      </div>
+
+      <!-- Name & Role -->
+      <div class="hero-info">
+        <h1 class="cod-title"><span class="highlight">Rizwaan POPAT</span></h1>
+        <h2 class="cod-role">Cybersecurity Engineer</h2>
+      </div>
+    </div>
+
+    <!-- Mission Brief -->
+    <p class="mission">
+      Mission: Protect systems, detect intrusions, and secure the digital battlefield.</br>  
+      Specialization: <strong>Cybersecurity & IT Engineering</strong>.
     </p>
+
+    <!-- Tactical Menu -->
     <div class="buttons">
-      <a href="/portfolio/projects" class="btn">Projects</a>
-      <a href="/portfolio/education" class="btn">Education</a>
-      <a href="/portfolio/experience" class="btn">Experience</a>
-	  <a href="/portfolio/contact" class="btn">Contact</a>
+      <a href="/portfolio/projects" class="btn">⚡ Projects</a>
+      <a href="/portfolio/education" class="btn">🎓 Education</a>
+      <a href="/portfolio/experience" class="btn">💼 Experience</a>
+      <a href="/portfolio/contact" class="btn">📬 Contact</a>
     </div>
   </section>
 </Layout>

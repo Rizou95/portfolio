@@ -120,3 +120,50 @@ body {
     border-top: 2px solid #ff6600;
   }
   
+  /* Tactical Profile Frame */
+  .hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* stacks on small screens */
+  }
+  
+  .hero-info {
+    text-align: left;
+  }
+  
+  .profile-wrapper {
+    flex-shrink: 0;
+  }  
+  
+  .cod-title {
+    margin-top: 1rem;
+    font-size: 2em;
+    font-weight: 700;
+    color: #ff6600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+  }
+
+  .cod-role {
+    font-size: 1.2rem;
+    color: #e6e6e6;
+    margin-top: 0.25rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+  }  
+  
+  .mission {
+    margin: 1rem auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+    background: #111111;
+    padding: 1rem;
+    border-left: 4px solid #ff6600;
+    border-radius: 6px;
+    font-family: monospace;
+  }
