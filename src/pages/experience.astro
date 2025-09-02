@@ -1,18 +1,55 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const experience = [
+  {
+    title: "Cybersecurity Intern - Company A (2024)",
+    description: `
+      <p>At Company A, I worked in the <strong>Security Operations Center (SOC)</strong>, where I monitored SIEM alerts, investigated phishing attempts, and contributed to <em>incident response playbooks</em>.</p>
+      <p>I also developed a Python script to automate log analysis, which reduced investigation time by 30%.</p>
+    `,
+    image: "/portfolio/experience/internship.png"
+  },
+  {
+    title: "System Administrator Assistant - Company B (2023)",
+    description: `
+      <p>I supported the IT department in managing Linux servers, performing regular system updates, and strengthening firewall configurations.</p>
+      <p>During this role, I improved patch deployment workflows and created documentation for security hardening procedures.</p>
+    `,
+    image: "/portfolio/experience/sysadmin.png"
+  }
+];
 ---
 <Layout title="Experience">
   <section>
-    <h2>💼 Professional Experience</h2>
-    <ul>
-      <li>
-        <strong>Cybersecurity Intern</strong> – Company A (2022)  
-        Assisted in vulnerability assessments, SIEM monitoring, and incident response.
-      </li>
-      <li>
-        <strong>IT Security Analyst</strong> – Company B (2023–present)  
-        Implemented security automation, network monitoring, and penetration testing.
-      </li>
-    </ul>
+    <h1>💼 Professional Experience</h1>
+    <div class="accordion">
+      {experience.map((job, index) => (
+        <div class="accordion-item" key={index}>
+          <button class="accordion-header">{job.title}</button>
+          <div class="accordion-content">
+            <div set:html={job.description}></div>
+            <img src={job.image} alt={job.title} />
+          </div>
+        </div>
+      ))}
+    </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".accordion-header");
+      items.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          header.classList.toggle("active");
+          if (header.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = 0;
+          }
+        });
+      });
+    });
+  </script>
 </Layout>

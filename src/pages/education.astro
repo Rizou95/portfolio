@@ -1,21 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const education = [
+  {
+    title: "Engineering Degree - EPITA Paris (2020 - 2025)",
+    description: `
+  <p>Specialized in <strong>Systems, Networks, and Security (SRS)</strong> at EPITA, with a strong focus on <strong>cybersecurity, network architecture, and system administration</strong>. The program emphasized both theoretical knowledge and applied practice, preparing me to design, secure, and maintain complex IT infrastructures.</p>
+
+  <p>Acquired <strong>hands-on experience</strong> in areas such as programming, algorithms, vulnerability analysis, incident response, and infrastructure optimization through numerous academic projects, labs, and large-scale simulations like forensic challenges and cyber-defense exercises.</p>
+
+  <p>Developed advanced skills in <strong>scripting (Python, Bash)</strong>, <strong>Linux/Unix administration</strong>, and deploying secure environments using technologies such as <strong>Docker, virtualization tools, and Active Directory</strong>. Training also included exposure to penetration testing, cryptography, and SOC methodologies, building a strong foundation for real-world cybersecurity challenges.</p>
+
+  <p>This specialization provided me with the technical expertise and security mindset to work on critical IT systems while also understanding organizational aspects of cybersecurity such as standards, risk management, and security operations.</p>
+`,
+    images: [
+      "/portfolio/education/epita.png",
+      "/portfolio/education/logo-srs.png"
+    ]
+  },
+  {
+    title: "Science Baccalaureate - Julie Victoire Daubié High School (2017 - 2020)",
+    description: `
+      <p>Graduate with <strong>High Honors</strong></p>
+      <p><strong>European English</strong> Section distinction</p>
+      <p>Studied Informatics and Engineering Sciences (ISN)</p>
+    `
+  }
+];
 ---
 <Layout title="Education">
   <section>
-    <h2>🎓 Education</h2>
-    <ul>
-      <li>
-        <strong>Bachelor in Computer Science</strong> – University XYZ (2018–2021)  
-        Focus: Networks, Systems, and Cybersecurity
-      </li>
-      <li>
-        <strong>Master in Cybersecurity Engineering</strong> – University ABC (2021–2023)  
-        Thesis: Secure Cloud Architectures
-      </li>
-      <li>
-        <strong>Certifications</strong> – CompTIA Security+, CEH, OSCP (in progress)
-      </li>
-    </ul>
+    <h1>🎓 Education</h1>
+    <div class="accordion">
+      {education.map((item, index) => (
+        <div class="accordion-item" key={index}>
+          <button class="accordion-header">{item.title}</button>
+          <div class="accordion-content">
+            <div set:html={item.description}></div>
+            {item.images && item.images.length > 0 && (
+              <div class="project-images">
+                {item.images.map((img, i) => (
+                  <img src={img} alt={`${item.title} image ${i + 1}`} key={i} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".accordion-header");
+      items.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          header.classList.toggle("active");
+          if (header.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = 0;
+          }
+        });
+      });
+    });
+  </script>
 </Layout>
