@@ -167,3 +167,85 @@ body {
     border-radius: 6px;
     font-family: monospace;
   }
+
+  .accordion {
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  
+  .accordion-item {
+    margin-bottom: 1rem;
+    border: 2px solid #ff6600;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #111111;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: #0a0a0a;
+    color: #ff6600;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    transition: background 0.2s ease;
+  }
+  
+  .accordion-header:hover {
+    background: #1a1a1a;
+  }
+  
+  .accordion-header.active {
+    background: #ff6600;
+    color: #0a0a0a;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1rem;
+  }
+  
+  .accordion-content p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    color: #ddd;
+    font-family: system-ui, sans-serif; /* Futuristic look */
+  }
+  
+  
+  .accordion-content img {
+    max-width: 100%;
+    margin: 0.5rem 0 1rem;
+    border: 2px solid #ff6600;
+    border-radius: 6px;
+  }
+
+  .project-images {
+    display: flex;          /* side by side */
+    flex-wrap: wrap;        /* wrap to next line on small screens */
+    gap: 1rem;              /* space between images */
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .project-images img {
+    flex: 1 1 200px;        /* each image takes up at least 200px, but can grow */
+    max-width: 200px;       /* limit width */
+    height: auto;
+    border: 2px solid #ff6600;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+  
+  .project-images img:hover {
+    transform: scale(1.05); /* subtle zoom on hover */
+  }
+  
+  
