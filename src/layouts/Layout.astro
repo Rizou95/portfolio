@@ -1,21 +1,18 @@
----
-const { title } = Astro.props;
----
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{title ? `${title} | My Portfolio` : "My Portfolio"}</title>
+    <title>Rizou95 | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/portfolio/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <nav>
-      <a href="/portfolio">Home</a>
-	  <a href="/portfolio/projects">Projects</a>
-      <a href="/portfolio/education">Education</a>
-      <a href="/portfolio/experience">Experience</a>
-      <a href="/portfolio/contact">Contact</a>
+      <a href="/">Home</a>
+	  <a href="/projects">Projects</a>
+      <a href="/education">Education</a>
+      <a href="/experience">Experience</a>
+      <a href="/contact">Contact</a>
     </nav>
     <main>
       <slot />
