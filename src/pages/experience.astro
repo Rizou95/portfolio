@@ -3,20 +3,78 @@ import Layout from "../layouts/Layout.astro";
 
 const experience = [
   {
-    title: "Cybersecurity Intern - Company A (2024)",
+    title: "Cybersecurity Engineer Internship | Osmium.Solutions, Turin (Italy) | Apr 2025 - Oct 2025",
     description: `
-      <p>At Company A, I worked in the <strong>Security Operations Center (SOC)</strong>, where I monitored SIEM alerts, investigated phishing attempts, and contributed to <em>incident response playbooks</em>.</p>
-      <p>I also developed a Python script to automate log analysis, which reduced investigation time by 30%.</p>
-    `,
-    image: "/portfolio/experience/internship.png"
+  <p>Runtime <strong>security assessment</strong> of a Linux-based operating system for satellites.</p>
+
+  <p>Design, conception, development of the company's product, improving its security posture.</p>
+
+  <p>This internship included use of <strong>Python and Bash scripting</strong>, creation of unit and functional tests using <strong>PyTest</strong>, data manipulation with <strong>JSON files</strong>, and use of <strong>well-known security guidelines</strong> for Linux systems.</p>
+
+  <p>As the last step before earning my engineering degree, this experience gave me the opportunity to bridge theory with practice. It sharpened my technocal skills and confirmed my readiness to take in the challenges of a career in cybersecurity engineering.</p>
+`,
+    images: [
+      "/portfolio/experience/osmium.png"
+    ]
   },
   {
-    title: "System Administrator Assistant - Company B (2023)",
+    title: "Programming Assistant | EPITA, Paris (France) | Feb 2024 - Feb 2025",
     description: `
-      <p>I supported the IT department in managing Linux servers, performing regular system updates, and strengthening firewall configurations.</p>
-      <p>During this role, I improved patch deployment workflows and created documentation for security hardening procedures.</p>
-    `,
-    image: "/portfolio/experience/sysadmin.png"
+  <p>Treasurer of the Association.</p>
+
+  <p>Responsible of the <strong>My-BitTorrent</strong> project.</p>
+
+  <p>Teaching advanced notions of <strong>C/Unix, C++, Java, JS and SQL</strong>.</p>
+
+  <p>First working as part of the <strong>YAKA</strong> team for one semester, I was teaching advanced notion of JAVA, C++ and JavaScript to 3rd year students while being the treasurer of the team (organizing events like BBQ, party).</p>
+
+  <p>Then for the next semester as part of the <strong>ACU</strong> team, teaching C/UNIX and SQL notion to 3rd year student but this time while being the treasurer and responsible of one of the 3 big project of the semester <strong>My-BitTorrent</strong>. A <strong>BitTorrent client in C</strong>, teaching student about <strong>networking protocols</strong>, having them manipulate .torrent file, handling <strong>P2P</strong> (peer-to-peer) TCP and client-server HTTP/HTTPS communications</p>
+`,
+    images: [
+      "/portfolio/education/epita.png"
+    ]
+  },
+  {
+    title: "Network Technician Internship | Brain-Networks, Nanterre (France) | Sep 2023 - Jan 2024",
+    description: `
+  <p><strong>Network equipment management</strong> (Fortinet and Forcepoint) to enhance network visibility using <strong>ZABBIX</strong>.</p>
+
+  <p><strong>Automation of server migration</strong> upgrades from SMC to other platforms using <strong>Python</strong>, resulting in a <strong>20% increase</strong> in the number of server migrated overnight.</p>
+
+  <p>Setting up a new <strong>secure network infrastructure</strong> for a client relocation to a new building. This included managing <strong>firewalls</strong>, <strong>switches</strong>, and <strong>access points</strong>, as well as configuring <strong>VPN tunnels</strong>.</p>
+
+  <p>That internship was my first step into security and network field, and it became the turning point that led me to dedicate my career to cybersecurity engineering.</p>
+`,
+    images: [
+      "/portfolio/experience/bnetworks.png"
+    ]
+  },
+  {
+    title: "Developer Internship | Broko, Rungis (France) | Jul 2022 - Aug 2022",
+    description: `
+  <p><strong>JavaScript</strong> script leveraging a <strong>RESTfull web API</strong> to autoomate the uploading of new products to the website.</p>
+
+  <p>NoCode database management using AirTable.</p>
+
+  <p>Development of a new website connected to a database using <strong>MAKE</strong>, <strong>Wordpress</strong>, and <strong>Airtable</strong> to provide clients with greater transparency about the products.</p>
+
+  <p>As my first technical internship, this experience not only strengthened my coding skills but also taught me how to defend ideas, give feedback, and review work. Lessons that have been essential to my growth as an engineer.</p>
+`,
+    images: [
+      "/portfolio/experience/broko.png"
+    ]
+  },
+  {
+    title: "Teacher (Volunteer)| MATRIX-AKDN, Argenteuil (France) | Sep 2020 - Aug 2023",
+    description: `
+  <p>Tutoring and Academic support for High School students</p>
+
+  <p>Private lessons in mathematics and physics.</p>
+
+  <p>Helping student with their future professional orientation.</p>
+
+  <p>Teaching as a volunteer sharpened my communications skills, boosted my confidence, and gave me valuable experience in sharing with others.</p>
+`
   }
 ];
 ---
@@ -24,12 +82,18 @@ const experience = [
   <section>
     <h1>💼 Professional Experience</h1>
     <div class="accordion">
-      {experience.map((job, index) => (
+      {experience.map((item, index) => (
         <div class="accordion-item" key={index}>
-          <button class="accordion-header">{job.title}</button>
+          <button class="accordion-header">{item.title}</button>
           <div class="accordion-content">
-            <div set:html={job.description}></div>
-            <img src={job.image} alt={job.title} />
+            <div set:html={item.description}></div>
+            {item.images && item.images.length > 0 && (
+              <div class="project-images">
+                {item.images.map((img, i) => (
+                  <img src={img} alt={`${item.title} image ${i + 1}`} key={i} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       ))}
