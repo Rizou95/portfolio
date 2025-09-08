@@ -249,4 +249,10 @@ body {
     transform: scale(1.05); /* subtle zoom on hover */
   }
   
-  
+  .contact {
+    font-size: larger;
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    color: #ddd;
+    font-family: system-ui, sans-serif; /* Futuristic look */
+  }
