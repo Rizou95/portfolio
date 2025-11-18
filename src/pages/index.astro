@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="Home">
+<Layout hideNave={true} title="Home">
   <section class="hero">
     <!-- Profile + Info Row -->
     <div class="hero-top">
       <!-- Profile Picture -->
       <div class="profile-wrapper">
-        <img src="/portfolio/profile.png" alt="Profile Picture" class="profile-pic" />
+        <img src="/portfolio/steam_profile.gif" alt="Profile Picture" class="profile-pic" />
       </div>
 
       <!-- Name & Role -->
@@ -19,9 +19,10 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- Mission Brief -->
     <p class="mission">
-      I am completing my <strong>engineering degree</strong> in cybersecurity at EPITA, with hands-on experience in <strong>intrusions detection</strong>, <strong>vulnerability assessment</strong>, and <strong>incident response</strong>.
-      I have worked with tools such as <strong>Wazuh</strong>, <strong>Wireshark</strong>, <strong>ELK stack</strong>, <strong>Snort</strong> and many more. And I regularly use <strong>Linux</strong>, <strong>Python</strong> and <strong>Bash scripting</strong> to automate analysis and improve workflows.<br>
-      Outside of working hours, I am passionate about video games, and learning how to play guitar. 
+      I'm an <strong>IT Engineer specializing in Cybersecurity</strong>, with a strong focus on <strong>network and security monitoring</strong>. My experience spans digital forensics, system hardening, and incident response, supported by a solid foundation in multiple programming languages. I'm a fast learner who enjoys tackling complex challenges, diving deep into emerging technologies, and continuously expanding my skill set.
+    <br>
+    <br>
+    This portfolio is an extension of my resume, offering more detailed insight into my projects, achievements, and professional experiences.
     </p>
 
     <!-- Tactical Menu -->
@@ -30,6 +31,9 @@ import Layout from "../layouts/Layout.astro";
       <a href="/portfolio/education" class="btn">🎓 Education</a>
       <a href="/portfolio/experience" class="btn">💼 Experience</a>
       <a href="/portfolio/contact" class="btn">📬 Contact</a>
+    </div>
+    <div class="buttons">
+      <a href="/portfolio/files/resume.pdf" target="_blank" class="btn">📄 My Resume</a>
     </div>
   </section>
 </Layout>

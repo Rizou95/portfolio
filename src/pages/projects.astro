@@ -3,20 +3,123 @@ import Layout from "../layouts/Layout.astro";
 
 const projects = [
   {
-    title: "Network Intrusion Detection System",
+    title: "Homelab",
     description: `
       <p>This project involved building a custom Intrusion Detection System (IDS) using <strong>Snort</strong> and <strong>Python automation</strong>. The system continuously monitored network traffic and triggered alerts on suspicious activity.</p>
       <p>A secondary Python script automated the log parsing process and fed data into a dashboard for real-time analysis. The system successfully detected test attacks, such as port scans and brute force attempts.</p>
     `,
-    image: "/portfolio/projects/ids.png"
+    images: [
+      "/portfolio/projects/ids.png"
+      ]
   },
   {
-    title: "Vulnerability Management Tool",
+    title: "FIC 2025",
     description: `
       <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
       <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
     `,
-    image: "/portfolio/projects/vuln-tool.png"
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "ARS",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "Zoglu",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "ADLIN",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "My-BitTorrent",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "P-ING",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "SWS - Spider Web Service",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "Tiger Compiler",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "42sh",
+    description: `
+      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
+      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+    `,
+    images: [
+"/portfolio/projects/vuln-tool.png"
+]
+  },
+  {
+    title: "OCR - Optical Character Recognition",
+    description: `
+      <p>This project is an OCR application written in C, designed to detect and recognize the digits of a Sudoku grid from an image, solve the grid, and reconstruct the final output. The program uses SDL for image rendering and GTK for the graphical interface.</p>
+      <p>The image is first processed using Gaussian Blur, thresholding, and rotation correction based on the Hough transform. After grid detection, each cell is segmented and normalized into a 28x28 image, then converted into a binary array. This data is passed into a custom neural network implemented in C, which uses pre-trained weights and performs forward propagation to classify digits or detect empty cells.</p>
+      <p>Once the digits are recognized, the Sudoku grid is solved, and the final image is rebuilt with SDL by placing the corresponding number images on a generated backgroud. All intermediate steps and final result are savec for user visualization.</p>
+    `
+  },
+  {
+    title: "The Hunter",
+    description: `
+      <p>3D multiplayer game developed under Unity in C#. This game is my first large IT project with my friend.</p>
+      <p>The game has 2 game modes: One multiplayer mode inspired by "Prop Hunt" where 1 player must find the other 3 who are hiding by taking on the appearance of element of the scenery; And one solo game mode inspired by the classical "Call of Duty Zombie" with gun fight and looting system, as well as incremental bot difficulty chasing the player.</p>
+      <p>The multiplayer game mode use Photon for the lobby creation and the communication between players. Blender3D was used to create weapons, maps and characters. </p>
+    `,
+    images: [
+      "/portfolio/projects/redhornet.png"
+    ]
   }
 ];
 ---
@@ -24,12 +127,18 @@ const projects = [
   <section>
     <h1>⚡ Projects</h1>
     <div class="accordion">
-      {projects.map((project, index) => (
+      {projects.map((item, index) => (
         <div class="accordion-item" key={index}>
-          <button class="accordion-header">{project.title}</button>
+          <button class="accordion-header">{item.title}</button>
           <div class="accordion-content">
-            <div set:html={project.description}></div>
-            <img src={project.image} alt={project.title} />
+            <div set:html={item.description}></div>
+            {item.images && item.images.length > 0 && (
+              <div class="project-images">
+                {item.images.map((img, i) => (
+                  <img src={img} alt={`${item.title} image ${i + 1}`} key={i} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       ))}
