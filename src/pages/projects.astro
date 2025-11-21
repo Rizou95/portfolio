@@ -5,18 +5,18 @@ const projects = [
   {
     title: "Homelab",
     description: `
-      <p>This project involved building a custom Intrusion Detection System (IDS) using <strong>Snort</strong> and <strong>Python automation</strong>. The system continuously monitored network traffic and triggered alerts on suspicious activity.</p>
-      <p>A secondary Python script automated the log parsing process and fed data into a dashboard for real-time analysis. The system successfully detected test attacks, such as port scans and brute force attempts.</p>
-    `,
-    images: [
-      "/portfolio/projects/ids.png"
-      ]
+      <p>This homelab project focuses on repurposing old hardware into a Proxmox server to build a secure, modular, and realistic learning environment. The goal is to recreate conditions similar to a SOC ecosystem while gaining hands‑on experience with modern security and infrastructure tools.</p>
+      <p>The setup includes a segmented network with VLANs, firewall rules, and a secure VPN for remote access. On top of Proxmox, multiple virtual machines are deployed to experiment with SOC‑related technologies such as the ELK stack, Wazuh for endpoint detection, and Shuffle for automation and SOAR workflows. The environment also serves as a platform for learning Kubernetes by deploying and managing containerized services.</p>
+      <p>Another part of the project involves setting up honeypots to observe attacker behavior and simulate internal and external attacks in a controlled environment. These simulations help test detection, logging, and response workflows across the ELK/Wazuh pipeline.</p>
+      <p>The main objective of this homelab is continuous learning, exploring monitoring tools, security automation, container orchestration, network hardening, and offensive security techniques in a safe and fully customizable infrastructure.</p>
+    `
   },
   {
     title: "FIC 2025",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
+      <p>FIC2025 is a project focused on creating a series of forensic cybersecurity exercises for candidates to solve during the Forum InCyber 2025 event in Lyon. The goal was to design engaging, realistic, and technically diverse challenges that were fun to solve while remaining accessible (not too easy, but not impossible).</p>
+      <p>The exercises covered a wide range of cybersecurity disciplines, including exploiting CVEs, analyzing databases, investigating with external forensic tools, memory dump analysis, packet capture (PCAP) analysis, and malware reverse engineering. Each challenge included a scenario and narrative context to immerse participants in a realistic investigation, guiding them through different layers of digital forensics and incident response.</p>
+      <p>The project pushed us to design original and well‑balanced exercises, from simple database puzzles and network capture analysis to more advanced tasks such as reversing a custom malware sample and retrieving hidden information. It required creativity, technical expertise, and careful calibration to ensure the final challenges were both educational and enjoyable for participants.</p>
     `,
     images: [
 "/portfolio/projects/vuln-tool.png"
@@ -25,82 +25,67 @@ const projects = [
   {
     title: "ARS",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>ARS is a one‑year project centered on building a complete virtual company infrastructure from scratch and then testing its security through realistic cyberattack scenarios. The project was divided into two major phases: setting up the infrastructure and exploiting it to evaluate its resilience.</p>
+      <p>The first phase focused on deploying the core infrastructure. It began with setting up a full Windows Active Directory domain, user workstations, DNS, and security‑oriented GPOs. Linux servers were added to provide essential services such as web hosting with Apache and NGINX, SSH access, and malware protection with ClamAV. The environment also included a pfSense firewall with custom rules, Snort for intrusion detection, and OpenVAS for vulnerability scanning. MISP and Graylog were introduced to handle threat intelligence and centralized log management. Together, these components formed a realistic enterprise environment with Windows clients, Debian servers, and proper segmentation.</p>
+      <p>The second phase involved exploiting and evaluating this infrastructure. Using Kali Linux, various cyberattacks were simulated, including Metasploit exploitation, tunneling and pivoting techniques, port scanning, enumeration, malware deployment, and data scraping. Additional components such as internal messaging, VPN access, and bot scraping were used to test monitoring, detection, and incident visibility.</p>
+      <p>Overall, the project combined system administration, network engineering, security hardening, monitoring, and offensive security techniques to reproduce the lifecycle of a real company environment and assess how it withstands practical cyber threats.</p>
+    `
   },
   {
     title: "Zoglu",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>Zoglu is a real-life oriented networking project aimed at redesigning a company’s network infrastructure across multiple sites. The redesign was requested because stakeholders were experiencing network latency and slow performance, and wanted a solution that would improve efficiency without being over-engineered.</p>
+      <p>The project involved evaluating the current infrastructure, identifying bottlenecks, and proposing scalable solutions for SD-WAN, site-to-site connectivity, firewall and switch configurations, internet access, IPSec/SSL VPNs, VoIP integration, and network segmentation. We worked closely with stakeholders to assess their existing equipment, determine what needed replacement, and define precise requirements for each site.</p>
+      <p>Deliverables included technical designs, network diagrams, equipment specifications, cost analysis, and technological recommendations tailored to each site. An action plan in the form of a GANTT chart and a financial study were also provided to ensure practical implementation. The project combined network architecture design, stakeholder communication, technical documentation, and strategic planning to deliver a scalable and effective multi-site network solution.</p>
+    `
   },
   {
     title: "ADLIN",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>ADLIN is a Linux administration project focused on deploying a full web infrastructure with automation. The main goal was to set up multiple websites served by an Apache server behind an Nginx reverse proxy, with HTTPS support and automatic redirection. Each site used either a simple index.html or a WordPress with a MariaDB database for content management.</p>
+      <p>The project also included a DNS hierarchy with a master server and delegated subdomains (e.g., master.local, web1.myid.master.local, web2.myid.master.local) to ensure proper name resolution for each web service. A separate machine hosted a Grafana instance for monitoring the health and activity of the Apache, Nginx, and WordPress services. Prometheus was used to collect metrics, which were displayed in Grafana dashboards for real-time visualization.</p>
+      <p>A key constraint was full automation: the entire infrastructure had to be deployed using an Ansible playbook. The playbook was designed for flexibility, allowing easy switching of target machines, high-level variable management, and clean modular roles. The project combined Linux system administration, web server configuration, monitoring, and infrastructure automation best practices.</p>
+    `
   },
   {
     title: "My-BitTorrent",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>My-BitTorrent is a C project designed to teach student about HTTP and TCP communication, peer-to-peer networking, and file management using .torrent files by implementing a BitTorrent Client. This project implement a simple HTTP server, handles multiple connections using epoll, manages .torrent files, and support P2P communication to downloads files represented by these torrents.</p>
+      <p>As one of the project managers and maintainers, I was responsible for rewriting the entire codebase, including file fragmentation, HTTP communication, and .torrent file handling. I also developed the test suite used to evaluate students work and provide feedback. During the 2-week project period, I supervised sessions, answered student questions, managed the ticketing system, monitored student progres while making adjustment and fix issues found on the project, and helping the other maintainers deploying the HTTP server and BitTorrent clients with aria2c, giving student a way to test their own project.</p>
+      <p>The work involved evaluating the project difficulty, adjusting the codebase for educational purposes, close collaboration woth the school supervisor, rewriting unit tests, supervising live sessions, handling retake exams, and ensuring the project ran smoothly for all participants. This role combined development, project management, and hans-on mentorship in a teaching environment.</p>
+    `
   },
   {
     title: "P-ING",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>P-ING is a full-stack project focused on building a custom IDE tailored to stakeholder requirements. the project involved meetings with stakeholders to define features and design choices. The backend is written in Java and provides core IDE functionality such as file management, file explorer, Git integration, text editing area and an embedded terminal. The frontend is built with Svelte to offer a responsive and interactive user interface.</p>
+      <p>In addition to standard IDE capabilities, the stakeholders requested a themed interface inspired by American football. The IDE includes a calandar of matches, pop-up memes, a color panel representing the Toulousain team, and syntaxt highlightinf for multiple programming languages (Java, Python, and C). Users can switch the interface language between French, English, and Moldavan. The project combines full-stack development, UI/UX design, and stakeholder-driven customization to deliver a feature-rich, themed IDE experience.</p>
+    `
   },
   {
     title: "SWS - Spider Web Service",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>Functional HTTP/HTTPS web server written in C++. The goal was to implement the core features of a modern web server, including request parsing, response generation, reverse proxy, connection handling, and timeout management. The server is capable of handling multiple clients, routing request, serving static files, and forwarding traffic to upstream servers depending on the configuration.</p>
+      <p>The architecture includes a robust HTTP/1.1 parser, a routing engine, a connection manager, and a proxy module. TLS/SSL support is integrated to handle HTTPS connections. vhost strategies allow distributing request across multiple vhost resources, while timeout system ensure that stalled or slow connection are properly terminated. Configuration files define virtual host, upstream servers and server behavior.</p>
+      <p>The server is designed around clean C++ abstraction, event-driving processing, and careful resource management to ensure stability, performance, and compliance with protocol requirements. It delivers a reliable environment capable of handling concurrent clients, forwarding requests efficiently, and serving as a foundation for more advanced web service features.</p>
+    `
   },
   {
     title: "Tiger Compiler",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>Full compiler for the Tiger programming language using an existing code base as a foundation. The objective was to implement the main components of a modern compiler, including lexing, parsing, AST construction, semantic analysis, and code generation. The compiler is written in C++ and relies heavily on object-oriented design, custom data structure, and design patterns such as the Visitor pattern for processing AST nodes.</p>
+      <p>Lexical analysis is implemented using Flex (also referred as YY), which scans the source code and produces tokens following the Tiger language specification. Parsing is handled with Bison, wich uses a formal grammar to build the corresponding Abstract Syntax Tree (AST). The parser manages expressions, statements, function declarations, variables definitions, type rules, and control-flow structures. Grammar validation, syntax checks, and error detection are integrated into Bison rules to ensure strict compliance with the Tiger language.</p>
+      <p>Semantic analysis traverses the AST using the Visitor pattern to verify type correctness, detect invalid operations, resolve identifiers, and manage nested scopes through symbol tables. This phase enforces Tiger's typing rules, validates function signatures, and ensure proper use of variables and control structures. Multiple internal data structures are used to maintain environments, track scope hierarchies, and manage type information.</p>
+      <p>After semantic validation, the compiler produces an intermediate representation that prepares the foundations for the code generation. Additional checks such as escape analysis and control-flow validation ensure correctness before generating the final output. Throughout the project, C++ features, memory management strategies, and modular components were used to keep the compiler maintainable, extensible, and aligned with classical compiler design principles.</p>
+    `
   },
   {
     title: "42sh",
     description: `
-      <p>I designed and implemented a web-based vulnerability management tool to streamline CVE tracking and patch workflows.</p>
-      <p>The platform integrated with <strong>security advisories</strong>, automatically mapped CVEs to installed software, and provided actionable remediation steps for system administrators.</p>
-    `,
-    images: [
-"/portfolio/projects/vuln-tool.png"
-]
+      <p>This project consist of developing a POSIX-compliant Unix shell written in C, inspired by bash and tcsh. The shell supports 2 modes: an interactive mode where the user types commands directly, and a non-interactive mode capable of executing commands from .sh file.</p>
+      <p>The shell includes a custom lexer and parser that tokenize input and build a syntax tree to handle separators, operators, quoting, environment variables, pipes, redirection, and logical operators. Process execution is implemented using fork, exec, and wait, with proper job control and signal handling for both foreground and background tasks.</p>
+      <p>Several built-in commands such as cd, echo, ls are implemented natively. The shell also provides environment variables expension and error handling to ensure correct behavior. Memory management and internal state tracking were designed to maintain stability and fully support POSIX shell requirements.</p>
+    `
   },
   {
     title: "OCR - Optical Character Recognition",
